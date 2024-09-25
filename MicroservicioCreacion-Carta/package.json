@@ -1,0 +1,11 @@
+{
+  "name": "microserviciocreacion-carta",
+  "version": "1.0.0",
+  "description": "Microservicios de creaciond e carta del proyecto arcano, donde se contruira el diseño de backen en api rest para el desarrollo del juego",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Ricardo Zuluaga Lezcano",
+  "license": "ISC"
+}
