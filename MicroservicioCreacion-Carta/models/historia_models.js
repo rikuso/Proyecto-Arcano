@@ -1,3 +1,4 @@
+const { array } = require("@hapi/joi");
 const mongoose =  require("mongoose");
 const historiaSchema = new mongoose.Schema({
 
@@ -11,7 +12,7 @@ const historiaSchema = new mongoose.Schema({
         required : false
     },
     razas:{
-        type : [String],
+        type : Array,
         required : true
     },
     imagen : {
@@ -28,7 +29,8 @@ const historiaSchema = new mongoose.Schema({
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,

@@ -7,12 +7,17 @@ const armaSchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
+    rareza:{
+        type : String,
+        required : true,
+        default : "1"
+    },
     imagen:{
         type : String,
         required : false
     },
     color : {
-        type : [String],
+        type : Array,
         required : true,
     },
     estado : {
@@ -25,7 +30,7 @@ const armaSchema = new mongoose.Schema({
     },
     durabilidad: {
         type: Number,
-        requiered : true,
+        required : true,
         default : 5
     },
     habilidadPasiva:{
@@ -38,19 +43,20 @@ const armaSchema = new mongoose.Schema({
     },
     efecto: {
         type : Array, //el efecto es donde se pondra rayo, tiempo, fuego, destruccion el efecto del arma
-        requiered : true
+        required : true
     },
     tipoArma: {
-        type : [String], 
-        requiered : true
+        type : Array, 
+        required : true
     },
-    piedraNecesarias: {
-        type : Map,
-        requiere : true
+    piedrasNecesarias: {
+        type : Array, //se maneja un array para guarda un map con su orden [{"amarrilo":2,"verde":1},{"verde":1}] en el indice 0 es la primer consumo de habilidad
+        required : true
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,

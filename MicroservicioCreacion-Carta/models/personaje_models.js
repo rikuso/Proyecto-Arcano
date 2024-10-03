@@ -6,6 +6,11 @@ const personajeSchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
+    rareza:{
+        type : String,
+        required : true,
+        default : "1"
+    },
     vida : {
         type : Number,
         default : 600,
@@ -16,7 +21,7 @@ const personajeSchema = new mongoose.Schema({
         default : "imagen"
     },
     color : {
-        type : [String],
+        type : Array,
         required : true,
     },
     estado : {
@@ -24,7 +29,7 @@ const personajeSchema = new mongoose.Schema({
         default : true
     },
     ser:{
-        type : [String],
+        type : Array,
         required : true
     },
     habilidadPasiva:{
@@ -36,12 +41,13 @@ const personajeSchema = new mongoose.Schema({
         required : true 
     },
     piedraNecesarias: {
-        type : Map, //puede se un color o multiples color piedra= {rojo: 2,marillo:1}
-        requiere : true
+        type : Array, //puede se un color o multiples color piedra= {rojo: 2,marillo:1}
+        required : true
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,

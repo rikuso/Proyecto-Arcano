@@ -1,3 +1,4 @@
+const { array } = require("@hapi/joi");
 const mongoose =  require("mongoose");
 const familiarjeSchema = new mongoose.Schema({
 
@@ -5,6 +6,11 @@ const familiarjeSchema = new mongoose.Schema({
         type : String,
         required : true,
         unique : true,
+    },
+    rareza:{
+        type : String,
+        required : true,
+        default : "1"
     },
     vida : {
         type : Number,
@@ -15,7 +21,7 @@ const familiarjeSchema = new mongoose.Schema({
         required : false
     },
     color : {
-        type : [String],
+        type : Array,
         required : true,
     },
     estado : {
@@ -23,24 +29,25 @@ const familiarjeSchema = new mongoose.Schema({
         default : true
     },
     ser:{
-        type : [String],
+        type : Array,
         required : true
     },
     habilidadPasiva:{
-        type : [String],
+        type : Map,
         required : true 
     },
     habilidadArcana: {
-        type : [String],
+        type : Map,
         required : true 
     },
     piedraNecesarias: {
-        type : [String],
-        requiere : true
+        type : Array,
+        required : true
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,

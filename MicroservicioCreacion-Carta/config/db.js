@@ -9,7 +9,7 @@ const conexionDB = async()=>{
 
         await mongoose.connect('mongodb://localhost:27017/creacionPj');
         console.log('conectado a mongodb....');
-    }catch{
+    }catch(err){
         err  => console.error('Error conectando a MongoDB:', err.message);
         process.exit(1)
     }

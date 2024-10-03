@@ -6,12 +6,17 @@ const habilidadSchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
+    rareza:{
+        type : String,
+        required : true,
+        default : "1"
+    },
     imagen:{
         type : String,
         required : false
     },
     color : {
-        type : [String],
+        type : Array,
         required : true,
     },
     estado : {
@@ -19,25 +24,26 @@ const habilidadSchema = new mongoose.Schema({
         default : true
     },
     piedraNecesarias: {
-        type : [String],
-        requiere : true
+        type : Array,
+        required : true
+    },
+    habilidadPasiva:{
+        type : Map,
+        required : true 
     },
     habilidadArcana: {
-        type : [String],
+        type : Map,
         required : true 
     },
     tiempoCasteo: {
-        type : [String],
-        requiered : true,
+        type : Array,
+        required : true,
         default : ["0"]
-    },
-    efecto: {
-        type : [String], //el efecto es donde se pondra rayo, tiempo, fuego, destruccion el efecto del arma
-        requiered : true
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,

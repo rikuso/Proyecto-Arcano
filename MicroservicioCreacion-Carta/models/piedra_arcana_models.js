@@ -6,12 +6,17 @@ const piedraArcanaSchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
+    rareza:{
+        type : String,
+        required : true,
+        default : "1"
+    },
     imagen:{
         type : String,
         required : false
     },
     color : {
-        type : [String],
+        type : Array,
         required : true,
     },
     estado : {
@@ -20,7 +25,8 @@ const piedraArcanaSchema = new mongoose.Schema({
     },
     codigo: {
         type : String,
-        requiere : true,
+        required : true,
+        unique : true,
     },
     fechaCreacion: {
         type : Date,
